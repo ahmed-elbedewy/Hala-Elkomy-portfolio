@@ -1,17 +1,66 @@
+import { motion as Motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
-import { useEffect } from 'react';
-function My_Home() {
-  useEffect(() => {
-    document.title = "Hala Elkomy - Home";
-  }, []);
+function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold mb-4">Welcome to Hala Elkomy</h1>
-      <p className="text-lg text-gray-700 mb-8">Your one-stop solution for all your needs.</p>
-      <button className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">
-        Get Started
-      </button>
+    <div className="position-relative vh-100 overflow-hidden text-white">
+      <Motion.img
+        src="/src/Assets/kotob.png"
+        alt="Hala Elkomy"
+        className="w-100 h-100 opacity-25  position-absolute top-0 start-0"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.6, scale: 0.9 }}
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+      />
+      <div className="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"></div>
+      <div className="container vh-100 d-flex   align-items-center justify-content-center">
+        <div className="row align-items-center w-100 text-center text-md-end">
+          <div className="col-12 col-md-6 mb-4 mb-md-0 order-2 order-md-2 d-flex justify-content-center">
+            <Motion.img
+              src="/src/Assets/hejab.png"
+              alt="Hala Elkomy"
+              className="img-fluid opacity-100 mt-5 w-75 w-md-100"
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </div>
+          <div className="col-12 col-md-6 order-1 order-md-2">
+            <h2 className="fw-bold text-white opacity-75 pb-3">مرحبا بكم</h2>
+            <h3 className="fw-bold pb-3 bg-one opacity-75 d-inline-block">
+              هاله الكومي معلمه اللغه العربيه
+            </h3>
+            <Motion.h1
+              className="fw-bold"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5, delay: 1.5 }}
+            ></Motion.h1>
+            <h3 className="fw-bold fa-2x opacity-75 text-one mt-3">
+              <Typewriter
+                words={[
+                  "لكل المراحل التعليمية",
+                  "المرحله الابتدائيه",
+                  "المرحله الاعداديه",
+                  "المرحله الثانويه",
+                ]}
+                loop={Infinity}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </h3>
+          </div>
+        </div>
+      </div>
     </div>
+
   );
 }
-export default My_Home;
+
+export default Home;

@@ -7,6 +7,7 @@ import Contact from "./Components/Contact/Contact";
 import Gallery from "./Components/Gallery/Gallery";
 import Testimonials from "./Components/Testimonials/Testimonials";
 import Footer from "./Components/Footer/Footer";
+
 function App() {
   return (
     <>
