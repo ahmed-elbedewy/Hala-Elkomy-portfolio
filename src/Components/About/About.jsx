@@ -1,8 +1,6 @@
-// import { useEffect } from "react";
+import aboutPic from "../../Assets/woman-search.png";
 function About() {
-    // useEffect(() => {
-    //     document.title = "Hala Elkomy - About Us";
-    // }, []);
+    
 
     return (
         <>
@@ -12,7 +10,7 @@ function About() {
                     <div className="row align-items-center w-100 text-center text-md-end">
                         <div className="col-12 col-md-6 mb-4 mb-md-0 order-1 order-md-2 d-flex justify-content-center">
                             <img
-                                src="/src/Assets/woman-search.png"
+                                src={aboutPic}
                                 alt="Hala Elkomy"
                                 className="img-fluid opacity-100 mt-2 w-50 w-md-50"
                             />

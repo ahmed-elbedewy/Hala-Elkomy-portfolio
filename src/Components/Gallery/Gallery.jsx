@@ -1,39 +1,45 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-// import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import picvid1 from '../../assets/pic-vid1.png';
+import picvid2 from '../../assets/pic-vid2.png';
+import picvid3 from '../../assets/pic-vid3.png';
+import picvid4 from '../../assets/pic-vid-4.png';
+import video1 from '../../assets/vedio1.mp4';
+import video2 from '../../assets/video2.mp4';
+import video3 from '../../assets/video3.mp4';
+import video4 from '../../assets/video4.mp4';
 const videos = [
   {
     id: 1,
     title: 'مراجعه النمط الإملائي لعلامات الترقيم',
-    thumbnail: '/src/assets/pic-vid3.png',
-    url: '/src/assets/video3.mp4',
+    thumbnail: picvid3,
+    url: video3,
     duration: '12:45',
     views: '1.2K'
   },
   {
     id: 2,
     title: 'الإملاء بطريقة ممتعة',
-    thumbnail: '/src/assets/pic-vid2.png',
-    url: '/src/assets/video2.mp4',
+    thumbnail: picvid2,
+    url: video2,
     duration: '15:30',
     views: '365'
   },
   {
     id: 3,
     title: 'تحليل النصوص الأدبية',
-    thumbnail: '/src/assets/pic-vid1.png',
-    url: '/src/assets/vedio1.mp4',
+    thumbnail: picvid1,
+    url: video1,
     duration: '2:54',
     views: '1.1K'
   },
   {
     id: 4,
     title: 'اساليب الانماط اللغويه',
-    thumbnail: '/src/assets/pic-vid-4.png',
-    url: '/src/assets/video4.mp4',
+    thumbnail: picvid4,
+    url: video4,
     duration: '18:22',
     views: '1.8K'
   },

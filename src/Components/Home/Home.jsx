@@ -1,8 +1,4 @@
-// ✅ المطلوب: نخلي صفحة Home تجمع كل الصفحات كسكاشن، ونخلي التنقل من Navbar يوصّل للسكشن المطلوب لو المستخدم على /، ولو مش على / نوديه للراوت الصح وبعدين نعمل Scroll
 
-// الخطوة الأولى: نجمع كل الصفحات كـ سكاشن داخل My_Home
-
-// 📁 Components/Home/Home.jsx
 import About from '../About/About';
 import Services from '../Services/Services';
 import Contact from '../Contact/Contact';
@@ -10,14 +6,16 @@ import Gallery from '../Gallery/Gallery';
 
 import { motion as Motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import backgroundPicture from '../../assets/kotob.png';
+import homePic from '../../assets/hejab.png'; 
 
 function Home() {
   return (
     <>
-      {/* الهيدر */}
+   
       <div className="position-relative vh-100 overflow-hidden text-white">
         <Motion.img
-          src="/src/Assets/kotob.png"
+          src={backgroundPicture}
           alt="Hala Elkomy"
           className="w-100 h-100 opacity-25  position-absolute top-0 start-0"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -29,7 +27,7 @@ function Home() {
           <div className="row align-items-center w-100 text-center text-md-end">
             <div className="col-12 col-md-6 mb-4 mb-md-0 order-2 order-md-2 d-flex justify-content-center">
               <Motion.img
-                src="/src/Assets/hejab.png"
+                src={homePic}
                 alt="Hala Elkomy"
                 className="img-fluid opacity-100 mt-5 w-75 w-md-100"
                 animate={{ scale: [1, 1.1, 1] }}
