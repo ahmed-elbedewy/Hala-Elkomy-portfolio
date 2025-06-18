@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 function About() {
-    useEffect(() => {
-        document.title = "Hala Elkomy - About Us";
-    }, []);
+    // useEffect(() => {
+    //     document.title = "Hala Elkomy - About Us";
+    // }, []);
 
     return (
         <>
@@ -18,7 +18,7 @@ function About() {
                             />
                         </div>
                         <div className="col-12 col-md-6 order-2 order-md-2">
-                        <h2>انا هاله الكومي من مصر معلمه لغه عربيه في مدرسه الاصدقاء في مسقط عمان اعلم الاطفال اللغه بطريقه حديثه وتواكب التطور </h2>
+                         <h2>   أنا هالة الكومي من مصر، معلمة لغة عربية في مدرسة المعبيلة الجنوبية في مسقط، عمان. أعلم الأطفال في المراحل التعليمية المختلفة اللغة بطريقة "مبتكرة" و"جذابة" تواكب التطور. أستخدم الذكاء الاصطناعي لتوصيل المعلومة بشكل أوضح وأكثر تفاعلية.</h2>
                         </div>
                         
                     </div>

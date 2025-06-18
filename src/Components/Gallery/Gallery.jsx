@@ -1,16 +1,300 @@
-import { useEffect } from "react";
-function Gallery() {
-  useEffect(() => {
-    document.title = "Hala Elkomy - Gallery";
-  }, []);
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+// import { useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+const videos = [
+  {
+    id: 1,
+    title: 'مراجعه النمط الإملائي لعلامات الترقيم',
+    thumbnail: '/src/assets/pic-vid3.png',
+    url: '/src/assets/video3.mp4',
+    duration: '12:45',
+    views: '1.2K'
+  },
+  {
+    id: 2,
+    title: 'الإملاء بطريقة ممتعة',
+    thumbnail: '/src/assets/pic-vid2.png',
+    url: '/src/assets/video2.mp4',
+    duration: '15:30',
+    views: '365'
+  },
+  {
+    id: 3,
+    title: 'تحليل النصوص الأدبية',
+    thumbnail: '/src/assets/pic-vid1.png',
+    url: '/src/assets/vedio1.mp4',
+    duration: '2:54',
+    views: '1.1K'
+  },
+  {
+    id: 4,
+    title: 'اساليب الانماط اللغويه',
+    thumbnail: '/src/assets/pic-vid-4.png',
+    url: '/src/assets/video4.mp4',
+    duration: '18:22',
+    views: '1.8K'
+  },
+  
+];
+
+
+const Gallery = () => {
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const openVideo = (url) => {
+    setSelectedVideo(url);
+  };
+
+  const closeVideo = () => {
+    setSelectedVideo(null);
+  };
+// useEffect(() => {
+//   document.title = "Hala Elkomy - Gallery";
+// }, []);
   return (
-    <>
-    <div className="gallery">
-      <h2>Gallery</h2>
-      <p>Explore our collection of images.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas non ipsum fuga nobis totam dolore culpa magni facilis ab nesciunt obcaecati, quo amet cum, quae illum atque odio temporibus dignissimos exercitationem asperiores? Esse error animi laudantium dignissimos inventore perspiciatis rerum adipisci atque. Voluptatum cupiditate doloribus fugiat perspiciatis asperiores quam! Unde, quos esse? Temporibus, iusto ullam enim sequi quidem optio ut voluptatem possimus saepe ipsam amet, numquam eligendi corrupti, velit laboriosam! Praesentium, eligendi. Nostrum ea porro eius minus laudantium, molestiae temporibus distinctio illo sed sunt quia, necessitatibus expedita cupiditate iusto non? Doloremque quasi aperiam odit accusantium qui sint, aliquid nemo necessitatibus fuga veniam neque ut blanditiis nihil. Minus incidunt illum commodi laudantium asperiores beatae voluptatum officia provident eveniet obcaecati quo voluptas debitis magni numquam distinctio assumenda labore iste, eos ratione necessitatibus doloremque! Totam tenetur animi dignissimos cumque, hic ad veniam repudiandae libero doloribus deleniti minus corrupti optio maiores impedit, deserunt ea id sapiente quod illum eos! Minima aut quaerat rem autem at corporis, nemo tempore hic reprehenderit fugit officiis. Voluptate explicabo molestiae quidem fugit impedit dolorum, earum sit. Eum velit enim et dolores impedit laudantium, reprehenderit eveniet nesciunt. Ducimus doloremque sed labore unde illum molestiae totam inventore delectus quam, temporibus cumque ullam nulla autem! Illum quia assumenda deleniti quibusdam voluptates laboriosam repudiandae voluptatem nihil, tempora dicta sed ducimus quaerat laudantium natus eligendi atque alias fugit cupiditate asperiores sequi, laborum aspernatur vel! Est provident facere odio. Tenetur, est quae sunt possimus, maiores et beatae, accusantium explicabo perferendis veniam iure. Recusandae explicabo molestiae aspernatur voluptas, quidem, dolor ex perspiciatis magnam aliquam, temporibus culpa similique ad porro iste omnis. Placeat, saepe quae quis ipsa est eos vitae quaerat nesciunt! Voluptatem asperiores reprehenderit saepe animi quia, aliquam dolore dolor! Beatae, deleniti, eos fugiat ab sequi delectus voluptatem quam nam explicabo cumque officiis, distinctio in architecto unde dolor eaque. Error reprehenderit obcaecati, id odit quas unde magni qui eveniet alias amet minima, eos illo consectetur animi dicta blanditiis! Excepturi illum a harum ipsa aliquid? Voluptas, iste distinctio et dolores earum voluptatibus rerum quasi necessitatibus praesentium ipsam error ducimus reprehenderit nostrum sint minima unde sapiente delectus quis nesciunt magni deserunt aliquam, maxime labore. Quibusdam, autem enim? Quibusdam repellendus enim quam, doloribus laborum repudiandae cumque est! Id maxime eveniet voluptatum magnam. Magni dolorem aspernatur libero soluta adipisci at velit natus animi harum quia commodi laudantium fugiat explicabo dignissimos dolorum labore accusantium laboriosam, quod ad cupiditate excepturi vitae ea laborum. Iste pariatur veritatis sit! Soluta quod veniam consequatur, architecto hic sunt mollitia debitis deleniti, ratione consectetur distinctio asperiores dolorem temporibus accusamus, eligendi incidunt molestiae esse doloribus. Soluta delectus, sequi quos ad officia voluptate consectetur necessitatibus dolores iusto aspernatur id laborum incidunt unde repellendus amet neque cumque nostrum fuga sapiente vel molestiae quaerat libero dicta. Commodi, laudantium harum cumque ipsam soluta laborum! Atque at officia eveniet consequuntur nesciunt! Repudiandae quae explicabo architecto hic dolore ex impedit minima in tenetur recusandae reiciendis quaerat obcaecati, nam unde saepe illo odit eligendi accusantium quibusdam officiis natus ipsa nulla? Deleniti placeat fugit veritatis incidunt accusamus quia, tenetur voluptatum aperiam voluptates? Sint eum sapiente nihil enim nostrum perspiciatis corrupti odit optio quisquam, esse nesciunt repellendus, ipsam quos? Ipsum omnis quam velit eius nam, rem placeat. Saepe molestias, est officia vel consequatur aliquam dignissimos maiores tenetur cupiditate. Illo culpa voluptates quidem quia eveniet, voluptas nam doloremque unde blanditiis sunt ullam quisquam rem iusto consectetur odit id vitae fugit labore quas maiores expedita nesciunt ex eum. Praesentium quia eveniet ea aliquam necessitatibus, nam doloribus id obcaecati corrupti fugiat enim laborum ullam est quam hic inventore. Vitae consequuntur dolore tempora tenetur quo voluptas numquam perspiciatis, iste blanditiis quis, quisquam recusandae minus deserunt enim odio necessitatibus temporibus quibusdam mollitia ullam. Veniam nostrum dolor ratione qui minima ipsa error molestias eos iure commodi perspiciatis odit saepe cum accusamus eius similique libero, consequatur quaerat, quis hic. Earum possimus accusamus tempora doloremque! Facere dolorem sunt hic? Natus reiciendis voluptatum quia sequi magni quibusdam excepturi labore magnam pariatur molestias maiores delectus, sit enim, nam vitae architecto voluptas earum consequuntur quo culpa iure, saepe perferendis! In obcaecati, et debitis magnam odio molestias perferendis aut eius dolore explicabo esse corporis repellat aperiam illo illum natus quas consequuntur, veritatis incidunt ducimus porro. Alias consequatur eum saepe numquam eaque perspiciatis magnam, asperiores quas reprehenderit dolor vitae ex ratione et vero ut quis, delectus necessitatibus qui rerum cum sint iure. Recusandae, totam ullam. Ipsum enim voluptate, sapiente ab veritatis nesciunt cum quisquam aut omnis ducimus amet, labore fuga atque expedita fugit quae quo necessitatibus ut magni excepturi? Illum error perferendis dolore laboriosam accusantium nobis consectetur cumque ad voluptatibus dolorum, rerum commodi quos quisquam nihil aspernatur, omnis at? Earum dicta eligendi illum molestiae iusto. Repellat eaque inventore est omnis atque. Quas iure sed omnis aliquid ab impedit, rem ratione recusandae placeat voluptatem architecto asperiores at modi animi rerum commodi labore vel eius quidem similique magnam est? Iste eos earum, fugiat voluptas unde obcaecati cum odit. Officiis temporibus voluptate velit ipsum perferendis distinctio doloremque dolore quam quaerat repellat animi voluptatum quibusdam, neque eaque aut unde vero veniam nulla perspiciatis consequatur. Perspiciatis voluptates aut iste, suscipit cum nulla consequatur tempore id? Illo nisi quisquam quaerat rem rerum. Tenetur ratione a placeat quaerat, facilis quasi corrupti magni deleniti exercitationem voluptatibus tempora illo deserunt ducimus quos perferendis, dolorum harum voluptatem, dolorem unde rerum rem ad neque. Dolore obcaecati ipsum consequatur repellat ipsam placeat eius, eos quod aliquam nemo, odit, sit expedita cum tempore est rem suscipit hic modi impedit quae! Ad, natus ullam? Reiciendis error debitis deleniti impedit facere quam, corporis veniam eaque aut vitae labore accusamus illo fugit illum sint dolore perferendis repellat! Quaerat vel non, id commodi minus ab nostrum ut? Excepturi nulla, quam qui hic voluptates fugiat pariatur sint quis? Ipsam nam ut id, non, expedita ex tempora in minima labore accusantium perspiciatis optio provident? Dolore debitis ipsum voluptate facilis natus animi placeat ab quo. Magni optio tempore quo? Mollitia reiciendis deserunt adipisci natus recusandae nam rem nesciunt alias, ut asperiores eos sapiente praesentium, consequuntur labore at, nobis cupiditate ipsum.</p>
-    </div>
-    </>
+    <section className="bg-black text-white py-5" dir="rtl">
+      <div className="container">
+       
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-5"
+        >
+          <h1 className="display-4 font-weight-bold mb-4">
+            <span className="gradient-text">معرض الفيديوهات التعليمية</span>
+          </h1>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="divider mx-auto mb-4"
+          />
+
+          <p className="text-white lead">
+            شاهد أحدث الدروس والفيديوهات التعليمية المقدمة من معلمتك
+          </p>
+        </motion.div>
+
+        
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-5"
+          >
+            <div className="row justify-content-center">
+              <div className="col-md-8">
+                <div className="filter-buttons text-center">
+            <button className="btn btn-outline-warning  mx-2 mb-2">الكل</button>
+            <button className="btn btn-outline-warning mx-2 mb-2">الابتدائي</button>
+            <button className="btn btn-outline-warning mx-2 mb-2">الإعدادي</button>
+            <button className="btn btn-outline-warning mx-2 mb-2">الثانوي</button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          
+            <div className="row">
+              {videos.map((video, index) => (
+                <motion.div
+            key={video.id}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="col-lg-4 col-md-6 mb-4"
+                >
+            <div className="video-card bg-dark  rounded overflow-hidden h-100">
+              <motion.div
+               
+                className="video-thumbnail position-relative"
+                onClick={() => openVideo(video.url)}
+                style={{ aspectRatio: "1 / 1", width: "100%", overflow: "hidden", background: "#222" }}
+              >
+                <img
+            src={video.thumbnail}
+            alt={video.title}
+            className="img-fluid w-100 h-100"
+            style={{ objectFit: "cover", aspectRatio: "1 / 1", width: "100%", height: "100%" }}
+                />
+                <div className="play-icon position-absolute">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="#fff">
+              <circle cx="12" cy="12" r="12" fill="rgba(0, 0, 0, 0.6)" />
+              <polygon points="10,8 17,12 10,16" fill="#fff" />
+            </svg>
+                </div>
+                <div className="duration-badge bg-black text-white position-absolute">
+            {video.duration}
+                </div>
+              </motion.div>
+
+              <div className="p-3">
+                <h3 className="h5 mb-2">{video.title}</h3>
+                <div className="d-flex justify-content-between text-muted">
+            <span>
+              
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{verticalAlign: 'middle', marginLeft: 4}}>
+                <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8a3 3 0 100 6 3 3 0 000-6z"/>
+              </svg>
+              {video.views} مشاهدة
+            </span>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-sm btn-outline-light"
+              onClick={() => openVideo(video.url)}
+            >
+              شاهد الآن
+            </motion.button>
+                </div>
+              </div>
+            </div>
+                </motion.div>
+              ))}
+            </div>
+
+           
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mt-4"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-primary px-5 py-3"
+            >
+              عرض المزيد من الفيديوهات
+            </motion.button>
+          </motion.div>
+              </div>
+
+             
+      {selectedVideo && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="video-modal"
+        >
+          <div className="modal-overlay" onClick={closeVideo}></div>
+          <motion.div
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            className="modal-content"
+          >
+            <button className="close-btn" onClick={closeVideo}>
+              &times;
+            </button>
+            <iframe
+              src={`${selectedVideo.replace('watch?v=', 'embed/')}?autoplay=1`}
+              title="فيديو تعليمي"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </motion.div>
+        </motion.div>
+      )}
+
+      
+      <style jsx>{`
+       
+        .video-card {
+          transition: all 0.3s ease;
+          border: 1px solid #333;
+        }
+        .video-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+          .video-card:hover circle {
+          fill: #C9F31D;
+        }
+        .video-thumbnail {
+          cursor: pointer;
+          overflow: hidden;
+        }
+        .play-icon {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0.8;
+          transition: all 0.3s ease;
+        }
+        .video-thumbnail:hover .play-icon {
+          opacity: 1;
+          
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+        .duration-badge {
+          bottom: 10px;
+          right: 10px;
+          padding: 3px 8px;
+          border-radius: 4px;
+          font-size: 12px;
+        }
+        .video-modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .modal-overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.8);
+        }
+        .modal-content {
+          position: relative;
+          width: 80%;
+          max-width: 800px;
+          z-index: 1001;
+          background: #000;
+          padding: 20px;
+          border-radius: 10px;
+        }
+        .close-btn {
+          position: absolute;
+          top: -40px;
+          right: 0;
+          background: none;
+          border: none;
+          color: white;
+          font-size: 30px;
+          cursor: pointer;
+        }
+        iframe {
+          width: 100%;
+          height: 450px;
+          border: none;
+          border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+          iframe {
+            height: 250px;
+          }
+          .modal-content {
+            width: 95%;
+          }
+        }
+      `}</style>
+    </section>
   );
-}
+};
+
+
+
 export default Gallery;
