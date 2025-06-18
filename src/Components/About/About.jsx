@@ -1,4 +1,4 @@
-import aboutPic from "../../Assets/woman-search.png";
+import aboutPic from "../../assets/woman-search.png";
 function About() {
     
 
